@@ -19,8 +19,8 @@ if(args.h){
 }
 
 const timezone = moment.tz.guest()
-const latitude = args.n || -1 * args.s;
-const longitude = args.e || -1 * args.w;
+const latitude = args.n || args.s * -1;
+const longitude = args.e || args.w * -1;
 // Make a request
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m&current_weather=true&timezone=' + timezone);
 // Get the data from the request
