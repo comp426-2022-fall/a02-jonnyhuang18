@@ -31,12 +31,15 @@ if (args.j) {
 	console.log(data);
 	process.exit(0);
 } 
-const days = args.d 
+else {
+    const days = args.d;
+    console.log(data.precipitation);
 
-if (days == 0) {
-  console.log("today.")
-} else if (days > 1) {
-  console.log("in " + days + " days.")
-} else {
-  console.log("tomorrow.")
+    if (days == 0) {
+    console.log("today.")
+    } else if (days > 1) {
+    console.log("in " + days + " days.")
+    } else {
+    console.log("tomorrow.")
+    }
 }
