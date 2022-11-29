@@ -22,6 +22,11 @@ const timezone = moment.tz.guest()
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m&current_weather=true&timezone=' + timezone);
 // Get the data from the request
 const data = await response.json();
+
+if (args.j) {
+	console.log(data);
+	process.exit(0);
+} 
 const days = args.d 
 
 if (days == 0) {
